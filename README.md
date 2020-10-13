@@ -1,5 +1,7 @@
 # Furnace
 
+![](documentation/screenshots/sc-001.jpg)
+
 Furnace é uma resposta ao [Desafio Full-Stack End-To-End](#), um teste de conhecimento sobre desenvolvimento web
 
 O Front-End foi desenvolvido com Angular 9, TypeScript e BootStrap 4, o Back-End foi desenvolvido com NodeJS e usa uma base de dados MySQL
@@ -115,6 +117,7 @@ Não consegui terminar todos os requisitos dentro do prazo, vou listar os requis
 ##### Altereções que eu queria fazer mas ficaram pendendes por causa do tempo:
 - Configurar o roteamento do Front-End
 - Implementar os filtros por nome, documentos e tipo na lista de Empresas e Fornecedores
+- Fazer uma validação dos dados de cadastro no Front-End e outra no Back-End
 - Preparar o Back-End para error manuais, por exemplo: mostrar uma entidade por um ID que não está cadastrado, por causa da falta de roteamento isso só acontece com uma requisição externa, porque no Front-End só é possivel abrir os detalhes de um usuario se ele aparecer na lista, e ele só aparece lá se existir, mas com as rotas, isso pode acontecer com um link de um usuario que foi apagado ou algo do genero
 - Colocar confirmações antes de apagar, ou alterar uma entidade
 - Comentar melhor o código
