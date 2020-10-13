@@ -1,0 +1,62 @@
+<div class="card" style="background-color: aquamarine;">
+
+    <h3 style="text-align: center;">Pesquisar</h3>
+    
+    <label for="exampleFormControlSelect1">Nome:</label>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="nome" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo:</label>
+        <select class="form-control" id="exampleFormControlSelect1" (change)="onSelectTypeChange($event)">
+            <option value="all">todos</option>
+            <option value="company">empresa</option>
+            <option value="provider">fornecedor</option>
+        </select>
+
+        <label for="exampleFormControlSelect1" *ngIf="entityType=='provider'">UF:</label>
+        <select class="form-control" id="exampleFormControlSelect1" *ngIf="entityType=='provider'">
+            <option value="0">todas</option>
+            <option value="1">AC</option>
+            <option value="2">AL</option>
+            <option value="3">AM</option>
+            <option value="4">AP</option>
+            <option value="5">BA</option>
+            <option value="6">CE</option>
+            <option value="7">DF</option>
+            <option value="8">ES</option>
+            <option value="9">GO</option>
+            <option value="10">MA</option>
+            <option value="11">MG</option>
+            <option value="12">MS</option>
+            <option value="13">MT</option>
+            <option value="14">PA</option>
+            <option value="15">PB</option>
+            <option value="16">PE</option>
+            <option value="17">PI</option>
+            <option value="18">PR</option>
+            <option value="19">RJ</option>
+            <option value="20">RN</option>
+            <option value="21">RO</option>
+            <option value="22">RR</option>
+            <option value="23">RS</option>
+            <option value="24">SC</option>
+            <option value="25">SE</option>
+            <option value="26">SP</option>
+            <option value="27">TO</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-primary">Buscar</button>
+    </div>
+
+    <div style="background-color: lightgrey;">
+
+        <app-list-item (clickName)="onClickName($event)" *ngFor="let entity of entities" [entity]="entity"></app-list-item>
+
+    </div>
+    <br>
+
+</div>

@@ -1,0 +1,106 @@
+<div class="card" style="background-color: lightpink;">
+
+    <div *ngIf="mode=='view'">
+
+        <P>
+            Nome: {{ entity.name + (entity.type == 'company' ? (' [' + entity.uf + ']') : '') }}
+        </P>
+
+        <P>
+            {{ entity.type == 'company' ? 'CNPJ' : ( entity.type == 'provider' ? (entity.is_legal_person ? 'CNPJ' : 'CPF') : "... " ) }}:
+            {{ entity.document }}
+        </P>
+
+        <p *ngIf="entity.type == 'provider'">
+            E-Mail: {{ entity.email }}
+        </p>
+
+        <p *ngIf="entity.type == 'provider' && !entity.is_legal_person">
+            Data de Nascimento: {{ entity.birthday }}
+        </p>
+
+        <button type="button" class="btn btn-primary" (click)="onChangeMode('edit')">Editar</button>
+
+    </div>
+
+
+    <div class="form-group" *ngIf="mode=='edit'">
+
+        <label for=""> Nome: </label>
+
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nome" [(ngModel)]="tempEntity.name">
+
+        <label for="exampleFormControlSelect1" *ngIf="entity.type=='company'">UF:</label>
+
+        <select class="form-control" id="exampleFormControlSelect1" *ngIf="entity.type=='company'" [(ngModel)]="ufId">
+            <option value="0">-SELECIONE-</option>
+            <option value="1">AC</option>
+            <option value="2">AL</option>
+            <option value="3">AM</option>
+            <option value="4">AP</option>
+            <option value="5">BA</option>
+            <option value="6">CE</option>
+            <option value="7">DF</option>
+            <option value="8">ES</option>
+            <option value="9">GO</option>
+            <option value="10">MA</option>
+            <option value="11">MG</option>
+            <option value="12">MS</option>
+            <option value="13">MT</option>
+            <option value="14">PA</option>
+            <option value="15">PB</option>
+            <option value="16">PE</option>
+            <option value="17">PI</option>
+            <option value="18">PR</option>
+            <option value="19">RJ</option>
+            <option value="20">RN</option>
+            <option value="21">RO</option>
+            <option value="22">RR</option>
+            <option value="23">RS</option>
+            <option value="24">SC</option>
+            <option value="25">SE</option>
+            <option value="26">SP</option>
+            <option value="27">TO</option>
+        </select>
+
+        <label for=""> {{ entity.type == 'company' ? 'CNPJ' : ( entity.type == 'provider' ? (entity.is_legal_person ? 'CNPJ' : 'CPF') : "... " ) }}: </label>
+
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" [(ngModel)]="tempEntity.document">
+
+        <label for="" *ngIf="entity.type == 'provider'"> E-Mail: </label>
+
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="e-mail" [(ngModel)]="tempEntity.email" *ngIf="entity.type == 'provider'">
+
+        <label for="" *ngIf="entity.type == 'provider' && !entity.is_legal_person"> Data de nascimento: </label>
+
+        <div class="input-group form-group" *ngIf="entity.type == 'provider' && !entity.is_legal_person">
+
+            <input type="text" class="form-control" placeholder="DD" [(ngModel)]="tempBirthday.day">
+            <input type="text" class="form-control" placeholder="MM" [(ngModel)]="tempBirthday.month">
+            <input type="text" class="form-control" placeholder="AAAA" [(ngModel)]="tempBirthday.year">
+
+        </div>
+
+        <button type="button" class="btn btn-primary" (click)="saveButton()">Salvar</button>
+        <button type="button" class="btn btn-secondary" (click)="onChangeMode('view')">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="deleteButton()"> APAGAR {{ (entity.type == 'company' ?  'EMPRESA' : 'FORNECEDOR') }}</button>
+
+    </div>
+
+
+    <P>
+        {{ entity.type == 'company' ? 'Lista de Fornecedores:' : ( entity.type == 'provider' ? "Lista de Clientes:" : "... :" ) }}
+    </P>
+
+
+    <div style="background-color: lightgray;">
+
+        <app-list-item></app-list-item>
+        <app-list-item></app-list-item>
+        <app-list-item></app-list-item>
+
+    </div>
+
+    <br>
+
+</div>

@@ -1,0 +1,37 @@
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="tab != 'home'" (click)="onChangeTab('list')">Procurar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="tab != 'home'" (click)="onChangeTab('register')">Criar</a>
+  </li>
+</ul>
+
+<div class="container-fluid;" style="position: relative; height:100vh;">
+
+  <div style="position: relative; height:100vh;" *ngIf="tab == 'home'">
+
+    <div style="width: 100%; margin: auto; position: absolute; top: 50%; transform: translateY(-50%);">
+
+      <h1 class="display-1" style="color:white; text-align: center;"> FURNACE</h1>
+
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link text-light" *ngIf="tab == 'home'" (click)="onChangeTab('list')">Procurar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" *ngIf="tab == 'home'" (click)="onChangeTab('register')">Criar</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <app-list *ngIf="tab == 'list'" (clickName)="onClickName($event)"></app-list>
+
+  <app-entity-details *ngIf="tab == 'details'" [entity]="entityDetailEntity" (deleteEntity)="onDeleteEntity()"></app-entity-details>
+
+  <app-menu-register *ngIf="tab == 'register'" (entityCreated)="onEntityCreated($event)"></app-menu-register>
+
+</div>

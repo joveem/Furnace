@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "b0d58251-6775-458c-b0c7-69c9db09f201",
+		"name": "Furnace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"email\": \"<string>\",\n    \"is_legal_person\": \"<string>\",\n    \"birthday\": \"<string>\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2929/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"provider\",\n    \"name\": \"sla inc\",\n    \"doc\": \"33344443334444\",\n    \"email\": \"email@email.com\",\n    \"is_legal_person\": \"1\",\n    \"birthday\": \"2020-10-31\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "create provider",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"doc\": \"<string>\",\n    \"email\": \"<string>\",\n    \"is_legal_person\": \"<string>\",\n    \"birthday\": \"<string>\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2929/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"provider\",\n    \"name\": \"sla inc\",\n    \"doc\": \"33344443334444\",\n    \"email\": \"email@email.com\",\n    \"is_legal_person\": \"1\",\n    \"birthday\": \"2020-10-31\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get entities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get company by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities/company/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities",
+						"company",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get provider by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities/provider/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities",
+						"provider",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "get entities filtered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities/seach?id=51",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities",
+						"seach"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "51"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "update company",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"<integer>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"document\": \"<string>\",\n    \"uf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"birthday\": \"<string>\",\n    \"is_legal_person\": \"<boolean>\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2929/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"type\": \"company\",\n    \"name\": \"epic gomes\",\n    \"document\": \"66666666\",\n    \"uf\": \"RJ\",\n    \"email\": \"\",\n    \"birthday\": \"\",\n    \"is_legal_person\": true\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "update company Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"<integer>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"document\": \"<string>\",\n    \"uf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"birthday\": \"<string>\",\n    \"is_legal_person\": \"<boolean>\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2929/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"type\": \"company\",\n    \"name\": \"epic gomes\",\n    \"document\": \"66666666\",\n    \"uf\": \"RJ\",\n    \"email\": \"\",\n    \"birthday\": \"\",\n    \"is_legal_person\": true\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "delete company",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities?id=1&type=company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "type",
+							"value": "company"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "delete provider",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2929/entities?id=1&type=provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2929",
+					"path": [
+						"entities"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "type",
+							"value": "provider"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "baseUrl",
+			"key": "baseUrl",
+			"value": "http://localhost:2929",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

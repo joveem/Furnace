@@ -1,0 +1,4 @@
+<div class="card">
+    <a (click)="onClickName()">Nome: {{ entity.name }} ( {{ entity.type == "company" ? "empresa / " + entity.uf : ( entity.type == "provider" ? "fornecedor" : "..." ) }} )</a>
+    <p>{{ entity.type == "company" ? "CNPJ" : ( entity.type == "provider" ? (entity.is_legal_person ? "CNPJ" : "CPF") : "... " ) }}: {{ entity.document }}</p>
+</div>

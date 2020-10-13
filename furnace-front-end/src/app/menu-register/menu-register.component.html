@@ -1,0 +1,107 @@
+<div class="card" style="background-color: darkgrey;">
+    <form>
+
+        <h3 style="text-align: center;">Registro</h3>
+
+        <div class="form-group">
+
+            <label for="exampleFormControlSelect1">Tipo:</label>
+
+            <select class="form-control" id="exampleFormControlSelect1" (change)="onSelectTypeChange($event)">
+                <option value="company">Empresa</option>
+                <option value="provider">Fornecedor</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1" *ngIf="entityType=='company'">Nome Fantasia:</label>
+            <label for="exampleFormControlInput1" *ngIf="entityType=='provider'">Nome:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nome" [(ngModel)]="entityName" [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group" *ngIf="entityType=='company'">
+            <label for="exampleFormControlInput1">CNPJ</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="XX.XXX.XXX/XXXX-XX" [(ngModel)]="entityDocument" [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group" *ngIf="entityType=='company'">
+            <label for="exampleFormControlSelect1">UF:</label>
+            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="companyUf" [ngModelOptions]="{standalone: true}">
+                <option value="0">-SELECIONE-</option>
+                <option value="1">AC</option>
+                <option value="2">AL</option>
+                <option value="3">AM</option>
+                <option value="4">AP</option>
+                <option value="5">BA</option>
+                <option value="6">CE</option>
+                <option value="7">DF</option>
+                <option value="8">ES</option>
+                <option value="9">GO</option>
+                <option value="10">MA</option>
+                <option value="11">MG</option>
+                <option value="12">MS</option>
+                <option value="13">MT</option>
+                <option value="14">PA</option>
+                <option value="15">PB</option>
+                <option value="16">PE</option>
+                <option value="17">PI</option>
+                <option value="18">PR</option>
+                <option value="19">RJ</option>
+                <option value="20">RN</option>
+                <option value="21">RO</option>
+                <option value="22">RR</option>
+                <option value="23">RS</option>
+                <option value="24">SC</option>
+                <option value="25">SE</option>
+                <option value="26">SP</option>
+                <option value="27">TO</option>
+            </select>
+        </div>
+
+        <div class="form-check form-check-inline" *ngIf="entityType=='provider'">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="natural"
+                [(ngModel)]="providerType">
+            <label class="form-check-label" for="inlineRadio1">Pessoa física</label>
+        </div>
+
+        <div class="form-check form-check-inline" *ngIf="entityType=='provider'">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="legal"
+                [(ngModel)]="providerType">
+            <label class="form-check-label" for="inlineRadio2">Pessoa jurídica</label>
+        </div>
+
+        <div class="form-group" *ngIf="providerType=='natural' && entityType=='provider'">
+            <label for="exampleFormControlInput1">CPF</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="XXXX-XXX-XXX-XX">
+        </div>
+
+        <div class="form-group" *ngIf="providerType=='legal' && entityType=='provider'">
+            <label for="exampleFormControlInput1">CNPJ</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="XX.XXX.XXX/XXXX-XX">
+        </div>
+
+        <label for="exampleFormControlInput1" *ngIf="providerType=='natural' && entityType=='provider'">Data de
+            nascimento:</label>
+
+        <div class="input-group form-group" *ngIf="providerType=='natural' && entityType=='provider'">
+
+            <input type="text" class="form-control" placeholder="DD">
+            <input type="text" class="form-control" placeholder="MM">
+            <input type="text" class="form-control" placeholder="AAAA">
+        </div>
+
+        <div class="form-group" *ngIf="entityType=='provider'">
+            <label for="exampleFormControlInput1">E-Mail</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+
+        <label class="text-danger" *ngIf="alertText != ''"> {{ alertText }} </label>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="registerButton()">Cadastrar</button>
+        </div>
+
+
+    </form>
+</div>
